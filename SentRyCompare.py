@@ -9,7 +9,7 @@ def CompareSeqArrs(sa1, sa2):
 
 
 def CompareSeq(s1, s2):
-     hd1 = s1.hamming_distance(target)
+    hd1 = s1.hamming_distance(target)
     hd2 = s2.hamming_distance(target)
     if(hd1 < hd2):
         return s1
