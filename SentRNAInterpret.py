@@ -1,10 +1,20 @@
 #!python3
 from SentRyObjects import Sequence
+import sys
+import pickle
 
-def GetSentRNAOutput():
-    #temporary output for testing
-    ra = []
-    ra.append(Sequence(2.4, "GUACACAUCA", "TestStructurelul1", "A"))
-    ra.append(Sequence(-1.7, "CUGUGUGAGC", "TestStructurelul2", "B"))
-    ra.append(Sequence(24.4, "GUACACACAG", "TestStructurelul3", "C"))
-    return ra
+class Interpreter:
+    def __init__(self, output):
+        with open(output, "rb") as handle:
+            self.SentRNAOutput = pickle.load(handle)
+
+    def GetSentRNAOutput(self):
+        #temporary output for testing
+        ra = []
+        for seq in self.SentRNAOutput:
+            ra.append(Sequence(self.getFreeEnergy(), #David's tool
+             seq[1], "TestStructurelul1", seq[0]))
+        return ra
+
+    def getFreeEnergy(self):
+        return 0 #placeholder for david's tool
