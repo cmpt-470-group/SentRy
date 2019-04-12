@@ -4,10 +4,8 @@ import EternaBrainInterpret as EB
 import SentRNAInterpret as SR
 import SentRyCompare
 import SentRyDisplay
-import ConvertPickles
 
-SentRNAOutputFilepath = 'C:\\Users\\Sam\\SentRNA\\models\\refined_models\\batch1\\eterna100_trial-19_MI-39.pkl'
-ConvertPickles.ConvertToUnix(SentRNAOutputFilepath)
+SentRNAOutputFilepath = 'E100SentRNA_models.txt'
 sri = SR.Interpreter(SentRNAOutputFilepath)
 
 sa1 = EB.GetEBOutput()

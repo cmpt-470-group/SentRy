@@ -12,5 +12,5 @@ class Sequence:
         output += "\n------------------------------------------------"
         output += "\nPrimary Structure: " + self.PrimaryS
         output += "\nSecondary Structure: " + self.SecondaryS
-        output += "\nFree Enery: " + str(self.FreeEnergy)
+        output += "\nFree Energy: " + str(self.FreeEnergy)
         return output

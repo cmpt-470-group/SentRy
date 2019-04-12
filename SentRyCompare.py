@@ -3,7 +3,6 @@ from SentRyObjects import Sequence
 
 def CompareSeqArrs(sa1, sa2):
     ra = []
-    print(str(sa1) + "\n Sa2: " + str(sa2)) #check values in arrays
     for i in range(len(sa1)):
         ra.append(CompareSeq(sa1[i], sa2[i]))
     return ra
