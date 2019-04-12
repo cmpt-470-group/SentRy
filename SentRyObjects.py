@@ -1,10 +1,13 @@
 #!python3
+import RNA # pip install RNAlib-2.4.11 
+
 class Sequence:
     def __init__(self, FE = 0, PS = "", SS = "", Name="Undefined"):
         self.FreeEnergy = FE
         self.PrimaryS = PS
         self.SecondaryS = SS
         self.Name = Name
+        self.FoldAndEvaluate()
 
     def Display(self):
         output = "\n"
@@ -14,3 +17,10 @@ class Sequence:
         output += "\nSecondary Structure: " + self.SecondaryS
         output += "\nFree Energy: " + str(self.FreeEnergy)
         return output
+    
+    def FoldAndEvaluate(self):
+        (ss, fe) = RNA.fold(this.PrimaryS)
+        self.SecondaryS = ss
+        self.FreeEnergy = fe
+        return true;
+        
