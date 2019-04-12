@@ -9,7 +9,15 @@ def CompareSeqArrs(sa1, sa2):
 
 
 def CompareSeq(s1, s2):
-    if(min(s1.FreeEnergy, s2.FreeEnergy) == s1.FreeEnergy):
+     hd1 = s1.hamming_distance(target)
+    hd2 = s2.hamming_distance(target)
+    if(hd1 < hd2):
         return s1
+    else if (hd1 == hd2):
+        if (min(s1.FreeEnergy, s2.FreeEnergy) == s1.FreeEnergy):
+            return s1
+        else:
+            return s2
     else:
         return s2
+        
