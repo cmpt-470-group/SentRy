@@ -8,7 +8,7 @@ def CompareSeqArrs(sa1, sa2):
     return ra
 
 
-def CompareSeq(s1, s2):
+def CompareSeq(s1, s2, target):
     hd1 = s1.hamming_distance(target)
     hd2 = s2.hamming_distance(target)
     if(hd1 < hd2):
