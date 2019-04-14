@@ -13,3 +13,13 @@ def ConvertToUnix(filename):
                 output.write(line + str.encode('\n'))
 
     print("Done. Saved %s bytes." % (len(content)-outsize))
+
+def GetTargets(path):
+    items = open(path, 'r').read().split('\t')
+    targets = []
+    for i in range(len(items)):
+        if i % 7 == 4:
+            if i != 4:
+                targets.append(items[i])
+    print(targets)
+    return targets

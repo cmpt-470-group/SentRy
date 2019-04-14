@@ -3,7 +3,7 @@ from SentRyObjects import Sequence
 import SentRyCompare
 import os
 import pickle
-import ConvertPickles
+from Utilities import ConvertToUnix
 
 class Interpreter:
     def __init__(self, models):
@@ -11,7 +11,7 @@ class Interpreter:
         self.models = open(models, 'r').read().split('\n')
         for model in self.models:
             if (model == ''): break
-            ConvertPickles.ConvertToUnix(model)
+            ConvertToUnix(model)
 
             with open(model, "rb") as handle:
                 self.SentRNAOutput.append(pickle.load(handle))

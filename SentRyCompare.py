@@ -1,10 +1,11 @@
 #!python3
 from SentRyObjects import Sequence
 
-def CompareSeqArrs(sa1, sa2):
+def CompareSeqArrs(sa1, sa2, targets):
     ra = []
-    for i in range(len(sa1)):
-        ra.append(CompareSeq(sa1[i], sa2[i]))
+    shortestLen = min(len(sa1), len(sa2), len(targets))
+    for i in range(shortestLen):
+        ra.append(CompareSeq(sa1[i], sa2[i], targets[i]))
     return ra
 
 
@@ -20,4 +21,3 @@ def CompareSeq(s1, s2, target):
             return s2
     else:
         return s2
-        
